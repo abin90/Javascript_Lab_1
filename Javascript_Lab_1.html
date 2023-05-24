@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<script type="text/javascript">
+		function myCalculator(){
+			var number_1=Number(document.getElementById("fNum").value); //Variable declaration and initilization.
+			var number_2=Number(document.getElementById("sNum").value);
+			var oprtr=document.getElementById("operator").value;
+			if(oprtr=="add"){
+				var result=number_1+number_2;
+			}else if(oprtr=="sub"){
+				var result=number_1-number_2;
+			}else if(oprtr=="mult"){
+				var result=number_1*number_2;
+			}else{
+				var result=number_1/number_2;
+			}
+			document.getElementById("answer").value=result.toPrecision(4);
+		}
+	</script>
+</head>
+<body>
+	<h2>Calculator</h2>
+	<form onsubmit="return false;">
+		<label for="fNum">Enter First Number:</label><br>   <!--Input for first number-->
+		<input id="fNum" type="text" name="First Number" required><br><br>
+		<label for="sNum">Enter Second Number:</label><br>   <!--Input for second number-->
+		<input id="sNum" type="text" name="Second Number" required><br><br>
+		<label for="operator">Select Your Operation:</label><br>
+		<select id="operator" required>      <!--Operator selection-->
+			<option value="add" selected>Addition</option>
+			<option value="sub">Substraction</option>
+			<option value="mult">Multiplication</option>
+			<option value="div">Division</option>
+		</select><br><br>
+		<button onclick="myCalculator()">Result</button><br><br>   <!--button for result-->
+	</form>
+	<label for="answer">Answer:</label>
+		<input id="answer" type="text" name=""> <!--Answer section-->
+</body>
+</html>
